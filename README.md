@@ -31,7 +31,7 @@ Os valores padrão já batem com o `docker-compose.yml`.
 - [x] Projeto base com Spring Boot, Maven e PostgreSQL via Docker Compose
 - [x] Migrations com Flyway (tabela `timeline_item`)
 - [x] Enum `TimelineItemType`
-- [ ] Entidade e repositório JPA
+- [x] Entidade e repositório JPA
 - [ ] Endpoints REST (CRUD) dos itens da timeline
 - [ ] Validação e tratamento de erros
 - [ ] Autenticação com JWT nas rotas de escrita
