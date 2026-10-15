@@ -32,8 +32,9 @@ Os valores padrão já batem com o `docker-compose.yml`.
 - [x] Migrations com Flyway (tabela `timeline_item`)
 - [x] Enum `TimelineItemType`
 - [x] Entidade e repositório JPA
-- [ ] Endpoints REST (CRUD) dos itens da timeline
-- [ ] Validação e tratamento de erros
+- [x] Endpoints de leitura e criação (`GET`, `GET` por id, `POST`)
+- [ ] Endpoints de atualização e remoção (`PUT`, `DELETE`)
+- [x] Validação e tratamento de erros
 - [ ] Autenticação com JWT nas rotas de escrita
 - [ ] Testes automatizados (JUnit e Testcontainers)
 - [ ] Documentação OpenAPI e deploy
