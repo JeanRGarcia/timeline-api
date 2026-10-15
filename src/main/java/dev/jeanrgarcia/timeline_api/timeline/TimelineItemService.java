@@ -27,4 +27,22 @@ public class TimelineItemService {
                 .map(TimelineItemResponse::from)
                 .orElseThrow(() -> new TimelineItemNotFoundException(id));
     }
+
+    @Transactional
+    public TimelineItemResponse create(CreateTimelineItemRequest request) {
+        TimelineItem item = new TimelineItem(request.type(), request.title(), request.startDate());
+        item.setSubtitle(request.subtitle());
+        item.setDescription(request.description());
+        item.setLocation(request.location());
+        item.setImageUrl(request.imageUrl());
+        item.setEndDate(request.endDate());
+        item.setSortOrder(nextSortOrder());
+        return TimelineItemResponse.from(repository.save(item));
+    }
+
+    private int nextSortOrder() {
+        return repository.findFirstByOrderBySortOrderDesc()
+                .map(last -> last.getSortOrder() + 1)
+                .orElse(0);
+    }
 }
